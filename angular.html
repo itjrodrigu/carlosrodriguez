@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>Carlos Rodriguez | Full Stack Developer</title>
@@ -7,7 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Lobster|Dancing+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="resources/css/main.css">
   </head>
-  <body>
+  <body ng-init="customers=['ted','tim','michelle','zed']">
     <header>
      <a href="index.html" id="logo">
         <h1>Carlos Rodriguez</h1>
@@ -22,18 +22,25 @@
         </ul>
       </nav>
     </header>
-    <div id="wrapper">
-      <section>
-        <img src="resources/img/carlosrodriguez.jpg" alt="Photograph of Carlos Rodriguez" class="profile-photo">
-        <h3>About</h3>
-        <p>I'm interested in work</p>
-        <p>More info.</p>
-      </section>
-      <footer>
-        <a href="mx.linkedin.com/in/carlucks"><img src="resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
-        <a href="http://github.com/itjrodrigu"><img src="resources/img/github.png" alt="Git Logo" class="social-icon"></a>
-        <p>&copy; 2014 Carlos Rodriguez.</p>
-      </footer>
+    <div>
+      Search: <input type="text" ng-model="searchText"/>
+        {{ searchText }}
+        <br/>
+
+        <h3>Customers:</h3>
+
+        <table>
+          <tr ng-repeat="cust in customers">
+            <td>{{ cust }}</td>
+            <td></td>
+          </tr>
+        </table>
     </div>
+    <script src="resources/angular/angular.js"></script>
+    <footer>
+      <a href="mx.linkedin.com/in/carlucks"><img src="resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
+      <a href="http://github.com/itjrodrigu"><img src="resources/img/github.png" alt="Git Logo" class="social-icon"></a>
+        <p>&copy; 2014 Carlos Rodriguez.</p>
+    </footer>
   </body>
 </html>
