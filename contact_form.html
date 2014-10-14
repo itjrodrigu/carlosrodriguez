@@ -27,10 +27,18 @@
       <form action="index.html" method="post">
         <h1> Contact Carlos</h1>
 
-  	    <input type="text" id="name" name="user_name">
-  	    <input type="email" id="mail" name="user_email">
-  	    <textarea id="comments" name="user_comments"></textarea>
-
+        <fieldset>
+          <legend><span class="number">1</span>Your basic info</legend>
+          <label for="name">Name:</label>
+    	    <input type="text" id="name" name="user_name">
+    	    <label for="mail">Mail:</label>
+          <input type="email" id="mail" name="user_email">
+    	    <label for="comments">Comments:</label>
+        </fieldset>
+        <fieldset>
+          <legend><span class="number">2</span>Your comments</legend>
+          <textarea id="comments" name="user_comments"></textarea>
+        </fieldset>
         <button type="submit">Send</button>
 
 
