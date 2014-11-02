@@ -534,12 +534,13 @@ optgroup {
  * Remove most spacing between table cells.
  */
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+/* this is for the section containing the table */
+.table-in-section {
+  display: inline-table;
 }
 
-td,
-th {
-  padding: 0;
+.centered-table {
+  margin-left: right;
+  margin-right: right;
 }
+
