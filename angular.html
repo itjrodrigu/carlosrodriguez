@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="customersApp">
+<html>
   <head>
     <meta charset="utf-8">
     <title>Carlos Rodriguez | Full Stack Developer</title>
@@ -8,59 +8,51 @@
     <link rel="stylesheet" href="resources/css/main.css">
     <link rel="stylesheet" href="resources/css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="resources/angular/angular.js"></script>
   </head>
-  <body ng-init="customers=['ted','tim','michelle','zed']">
+  <body>
     <header>
-     <a href="index.html" id="logo">
+      <a href="index.html" id="logo">
         <h1>Carlos Rodriguez</h1>
         <h2>Full Stack Developer</h2>
       </a>
       <nav>
         <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="portfolio.html">portfolio</a></li>
+          <li><a href="index.html" class="selected">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="angular.html" class="selected">Angular.js</a></li>
+          <li><a href="angular.html">Angular.js</a></li>
         </ul>
       </nav>
     </header>
-    <div ng-controller="CustomersController">
-      <form>
-        Search: <input type="text" ng-model="searchText"/>
-          {{ searchText }}
-          <br/>
+    <div id="wrapper">
+      <section>
+        <h3>Angular</h3>
+        <p>Angular is developed by Google and is a special flavor of Javascript as it is embedded into HTML. It is gaining importance and I've seen lots of open job positions requiring it, so it's good to take an eye onto it.</p> 
 
-          <h3>Customers:</h3>
+        <p>I don't have yet decided how will approach this page content, so by now I'll be adding some live examples, and some resources to learn it as well, as it seems there are lots of easy examples out there, but for more complex things there's no too much where to look at.</p>
 
-          <table>
-            <tr ng-repeat="cust in customers | filter:searchText">
-              <td>{{ cust.name }}</td>
-              <td>{{ cust.total }}</td>
-            </tr>
-          </table>
-      </form>
-    </div>
-    <script src="resources/angular/angular.js"></script>
-    <script src="resources/angular/angular-route.js"></script>
-    <script>
-      
-      var app = angular.module('customersApp', ['ngRoute']);
+        <h3>A good introduction video:</h3>
+          <ul>
+            <li><a href="https://www.youtube.com/watch?v=TRrL5j3MIvo&feature=youtu.be">Introduction to Angular.js in 50 Examples Part 1</a></li>
+          </ul>
 
-      app.controller('CustomersController', function($scope){
+        <h3>Live Examples:</h3>
 
-      $scope.customers = [
-          {"id": 1, "name": "Ted", "total": 5.996},
-          {"id": 2, "name": "Michelle", "total": 10.994},
-          {"id": 3, "name": "Zed", "total": 10.99},
-          {"id": 4, "name": "Tina", "total": 15.994}
-        ];
-        
-      });
-    </script>
-    <footer>
-      <a href="http://mx.linkedin.com/in/carlucks"><img src="resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
-      <a href="http://github.com/itjrodrigu"><img src="resources/img/github.png" alt="Git Logo" class="social-icon"></a>
+        <ul>
+          <li><a href="simpleInputAndData.html">Simple input field and data filtering from a table.</a></li>
+        </ul>
+
+        <h3>Learning resources:</h3>
+        <ul>
+          <li><a href="http://www.egghead.io">Cabeza de Huevo!</a></li>        
+        </ul>
+      </section>
+      <footer>
+        <a href="http://mx.linkedin.com/in/carlucks"><img src="resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>
+        <a href="http://github.com/itjrodrigu"><img src="resources/img/github.png" alt="Git Logo" class="social-icon"></a>
         <p>&copy; 2014 Carlos Rodriguez.</p>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
