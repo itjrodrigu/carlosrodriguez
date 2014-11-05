@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>Carlos Rodriguez | Full Stack Developer</title>
@@ -9,8 +9,15 @@
     <link rel="stylesheet" href="../resources/css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../resources/angular/angular.js"></script>
+    <script>
+      function nameCtrl($scope){
+        console.log($scope);
+        $scope.key = "Please type a key...";
+        $scope.value= "Please type a value...";
+      }
+    </script>
   </head>
-  <body>
+  <body ng-controller="nameCtrl">
     <header>
       <a href="../index.html" id="logo">
         <h1>Carlos Rodriguez</h1>
@@ -27,17 +34,13 @@
     </header>
     <div id="wrapper">
       <section>
-        Name:<input id="textInput" type="text"/></br>
-        Hola Mundo!
-
-        <script>
-          var textInputElement = document.getElementById("textInput");
-          textInputElement.addEventListener('keyup', function(){
-            console.log('Hey! got a keyup!!! Great :D');
-          });
-        </script>
-
-        <p><b>Please note that you need to open console (Firebug?) in order to see the console.log output</b></p>
+        <h3>Data Binding of two properties through Angular.js!</h3>
+        Key:<input ng-model="key" type="text"/>
+        Value:<input ng-model="value" type="text"/>
+        </br>
+        
+        This is a map where key is: {{key}} and value is: {{value}}
+        <p><b>You can see an output of the $scope object in the console. (firebug?)</b></p>
       </section>
       <footer>
         <a href="http://mx.linkedin.com/in/carlucks"><img src="../resources/img/linkedin.png" alt="Linkedin Logo" class="social-icon"></a>

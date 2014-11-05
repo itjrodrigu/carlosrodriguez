@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>Carlos Rodriguez | Full Stack Developer</title>
@@ -27,16 +27,12 @@
     </header>
     <div id="wrapper">
       <section>
-        Name:<input id="textInput" type="text"/></br>
-        Hola Mundo!
-
-        <script>
-          var textInputElement = document.getElementById("textInput");
-          textInputElement.addEventListener('keyup', function(){
-            console.log('Hey! got a keyup!!! Great :D');
-          });
-        </script>
-
+        <h3>Data Binding of two properties through Angular.js!</h3>
+        Key:<input ng-model="key" type="text"/>
+        Value:<input ng-model="value" type="text"/>
+        </br>
+        
+        This is a map where key is: {{key}} and value is: {{value}}
         <p><b>Please note that you need to open console (Firebug?) in order to see the console.log output</b></p>
       </section>
       <footer>
