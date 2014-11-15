@@ -10,10 +10,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../resources/angular/angular.js"></script>
     <script>
+
       var nameApp = angular.module('nameApp', []);
+
       nameApp.controller('nameCtrl', function($scope){
         $scope.key = 'here goes key...';
-        $scope.value = 'here goes value...';
+
+        $scope.$watch('value', function(newValue, oldValue){
+          console.log('new value is: ' + newValue);
+        });
+
+        setTimeout(function(){
+          $scope.value = 'Rodriguez';
+          $scope.$apply();
+        }, 1000);
       });
     </script>
   </head>
@@ -34,7 +44,7 @@
     </header>
     <div id="wrapper">
       <section>
-        <h3>Data Binding of two properties through Angular.js!</h3>
+        <h3>Changing the values of $scope object asynchronously through setTimeout() and applying them through $Apply() over the scope, so $scope.$apply()</h3>
         Key:<input ng-model="key" type="text"/>
         Value:<input ng-model="value" type="text"/>
         </br>
